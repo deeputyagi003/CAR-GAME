@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #111827, #312e81);
+    color: white;
+}
+
+.game {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin-bottom: 15px;
+}
+
+.score-board {
+    width: 320px;
+    margin: auto;
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: space-between;
+    background: #1f2937;
+    padding: 12px 18px;
+    border-radius: 10px;
+}
+
+.score-board b {
+    color: #facc15;
+}
+#road {
+    position: relative;
+    width: 320px;
+    height: 500px;
+    margin: auto;
+    overflow: hidden;
+    background: #333;
+    border-left: 8px solid #facc15;
+    border-right: 8px solid #facc15;
+}
+#road::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 6px;
+    height: 100%;
+    transform: translateX(-50%);
+    background: repeating-linear-gradient(
+        to bottom,
+        white 0px,
+        white 50px,
+        transparent 50px,
+        transparent 100px
+    );
+}
+#player-car {
+    position: absolute;
+    bottom: 20px;
+    left: 135px;
+    font-size: 45px;
+    z-index: 5;
+}
+p {
+    margin: 15px 0;
+    color: #ddd;
+}
+button {
+    padding: 10px 22px;
+    margin: 5px;
+    border: none;
+    border-radius: 8px;
+    background: #8b5cf6;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #a78bfa;
+    transform: scale(1.05);
+}
+
+#reset-btn {
+    background: #ef4444;
+}
+
+#reset-btn:hover {
+    background: #f87171;
+}
+@media (max-width: 500px) {
+    #road {
+        width: 280px;
+        height: 450px;
+    }
+
+    .score-board {
+        width: 280px;
+    }
+
+    #player-car {
+        left: 115px;
+    }
+}
